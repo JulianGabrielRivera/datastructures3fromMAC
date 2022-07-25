@@ -22,3 +22,24 @@ function binarySearch(arr,elem) {
 }
 binarySearch([2,5,6,9,13,15,28,30], 15)
 // Binary search solution - good for sorted arrays otherwise sucks
+
+function naiveSearch(long,short){
+    let count = 0;
+    for(let i =0; i<long.length;i++){
+        for(let j =0; j< short.length;j++){
+            console.log(long[i], short[j])
+            // if there is a match we dont break out and we keep comparing the short string.
+            if(short[j] !== long[i+j]){
+                console.log('break!')
+                break;
+            }
+            if(j === short.length-1){
+                console.log("found one!")
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+naiveSearch('lorie loled', "lol")
