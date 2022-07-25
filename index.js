@@ -43,3 +43,44 @@ function naiveSearch(long,short){
 }
 
 naiveSearch('lorie loled', "lol")
+
+//  this is bubble sort and it works but its not optimized
+function bubbleSort(arr){
+
+//  the problem with doing it like this it goes too far, it hits end of loop and then compares one more time but its not there
+    for( let i=0;i<arr.length;i++){
+        
+ for( let j=0; j<arr.length;j++){
+    console.log(arr, arr[j], arr[j+1])
+    if(arr[j]> arr[j+1]){
+        let temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+2] = temp;
+    }
+ }
+    }
+    return arr;
+}
+bubbleSort([37,45,29,8]);
+// optimized with noSwaps
+function bubbleSort(arr){
+    let noSwaps;
+// doesnt do unnecessary sorts
+    // this way we no longer have to sort undefined because of -1
+        for( let i=arr.length;i>0;i--){
+            noSwaps = true;
+     for( let j=0; j<i-1;j++){
+        console.log(arr, arr[j], arr[j+1])
+        if(arr[j]> arr[j+1]){
+            let temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+2] = temp;
+            noSwaps = false;
+        }
+     }
+     if(noSwaps) break;
+        }
+        return arr;
+    }
+    bubbleSort([37,45,29,8]);
+
