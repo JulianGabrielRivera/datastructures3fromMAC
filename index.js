@@ -84,3 +84,47 @@ function bubbleSort(arr){
     }
     bubbleSort([37,45,29,8]);
 
+    // linear sort
+
+    function selectionSort(arr){
+        for(let i=0; i<arr.length; i++){
+let lowest =i;
+for(let j =i+1; j<arr.length;j++){
+    console.log(i,j)
+    if(arr[j] < arr[lowest]){
+        lowest = j;
+    }
+}
+if(i !== lowest){
+    console.log('**********')
+console.log(arr)
+console.log("swapping to:")
+let temp = arr[i];
+arr[i] = arr[lowest];
+arr[lowest] = temp;
+console.log(arr)
+console.log('**********')
+}
+
+
+        }
+        return arr;
+    }
+selectionSort([34,22,10,19,17])
+
+// Insertion Sort
+
+function insertionSort(arr){
+    for(let i =1; i<arr.length;i++){
+        let currentVal = arr[i];
+        for(let j= i-1;j>=0 && arr[j] > currentVal;j--){
+            arr[j+1] = arr[j]
+            console.log(arr)
+        }
+        arr[j+1] = currentVal;
+        console.log(arr)
+    }
+    return arr
+}
+insertionSort([2,1,9,76,4])
+
