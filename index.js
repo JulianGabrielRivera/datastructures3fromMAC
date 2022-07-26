@@ -126,5 +126,6 @@ function insertionSort(arr){
     }
     return arr
 }
+// testing
 insertionSort([2,1,9,76,4])
 
